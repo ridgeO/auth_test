@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  root "pages#home"
+
+  get "secure" => "pages#secure"
+
+  get "/auth/google_oauth2/callback" => "sessions#create"
+
+  delete "/logout" => "sessions#destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
